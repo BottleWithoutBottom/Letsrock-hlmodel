@@ -52,6 +52,15 @@ abstract class HLModel
         )->fetchAll();
     }
 
+    public function add($data)
+    {
+        if (empty($data)) return false;
+
+        $entity = $this->getHlEntity();
+
+        return $entity::add($data);
+    }
+
     public function update($id, $data)
     {
         if (empty($id) || empty($data) || !is_array($data)) return false;
