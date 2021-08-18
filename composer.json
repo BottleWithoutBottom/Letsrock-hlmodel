@@ -9,7 +9,8 @@
     }
   ],
   "require": {
-    "php": ">=7.3.0"
+    "php": ">=7.3.0",
+    "letsrock/creatable-model": "1.*"
   },
   "autoload": {
     "classmap": ["src"]

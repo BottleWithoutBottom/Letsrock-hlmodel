@@ -3,8 +3,9 @@
 namespace Birtock\Highload;
 use Bitrock\HLModelTrait;
 use Bitrix\Highloadblock\HighloadBlockTable;
+use Letsrock\CreatableModel\CreatableModel;
 
-abstract class HLModel
+abstract class HLModel implements CreatableModel
 {
     use HLModelTrait;
 
@@ -59,6 +60,11 @@ abstract class HLModel
         $entity = $this->getHlEntity();
 
         return $entity::add($data);
+    }
+
+    public function createByFactory(array $data)
+    {
+        return $this->add($data);
     }
 
     public function update($id, $data)
