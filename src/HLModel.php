@@ -52,6 +52,11 @@ abstract class HLModel implements CreatableModel
             ]
         )->fetchAll();
     }
+    
+    public function getListAll(array $params = [])
+    {
+        return $this->getHlEntity()::getList($params)->fetchAll();
+    }
 
     public function add($data)
     {
